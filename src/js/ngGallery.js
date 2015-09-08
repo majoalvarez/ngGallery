@@ -5,7 +5,7 @@ angular.module('jkuri.gallery', [])
 
         var defaults = {
             baseClass   : 'ng-gallery',
-            thumbClass  : 'ng-thumb',
+            thumbClass  : 'thumb',
             templateUrl : 'ng-gallery.html'
         };
 
