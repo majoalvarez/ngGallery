@@ -28,7 +28,7 @@ angular.module('jkuri.gallery', [])
             '<div class="{{ baseClass }}">' +
                 '<div class="carousel slide">'+
                 '   <div class="carousel-inner">'+
-                '       <div ng-repeat="i in images">' +
+                '       <div ng-repeat="i in images" class="item">' +
                 '           <img ng-src="{{ i.thumb }}" class="{{ thumbClass }}" ng-click="openGallery($index)" alt="Image {{ $index + 1 }}" />' +
                 '        </div>' +
                 '    </div>' +
