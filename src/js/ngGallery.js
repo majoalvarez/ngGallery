@@ -31,17 +31,17 @@ angular.module('jkuri.gallery', [])
                 '<div ng-repeat="i in images | chunk:3">' +
                     '<div class="col-xs-4 nopadding-side">'+
                         '<a class="thumbnail">' +
-                            '<img ng-src="{{getGallerySource(0, $index)}}" alt="Image" class="thumb" />' +
+                            '<img ng-src="{{getGallerySource(0, $index)}}" class="thumb" />' +
                         '</a>' +
                     '</div>' +
                     '<div class="col-xs-4 nopadding-side">' +
                         '<a class="thumbnail">' +
-                            '<img ng-src="{{getGallerySource(1, $index)}}" alt="Image" class="thumb" />' +
+                            '<img ng-src="{{getGallerySource(1, $index)}}" class="thumb" />' +
                         '</a>' +
                     '</div>' +
                     '<div class="col-xs-4 nopadding-side">' +
                         '<a class="thumbnail">' +
-                            '<img ng-src="{{getGallerySource(2, $index)}}" alt="Image" class="thumb" />' +
+                            '<img ng-src="{{getGallerySource(2, $index)}}" class="thumb" />' +
                         '</a>' +
                     '</div>' +
                 '</div>' + //end repeat
@@ -123,7 +123,7 @@ angular.module('jkuri.gallery', [])
 			};
 
             var getGallerySource = function(index, parent) {
-                return scope.images[ (parseInt(index) + 3 * parent) % scope.images.length ];
+                return scope.images[ (parseInt(index) + 3 * parent) % scope.images.length ].thumb;
             };
 
 			var showImage = function (i) {
