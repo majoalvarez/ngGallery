@@ -31,7 +31,7 @@ angular.module('jkuri.gallery', [])
                 '<div ng-repeat="i in images | chunk:3">' +
                     '<div class="col-xs-4 nopadding-side">'+
                         '<a class="thumbnail">' +
-                            '<img ng-src="i.thumb" class="thumb" />' +
+                            '<img ng-src="{{i.thumb}}" class="thumb" />' +
                         '</a>' +
                     '</div>' +
                     '<div class="col-xs-4 nopadding-side">' +
