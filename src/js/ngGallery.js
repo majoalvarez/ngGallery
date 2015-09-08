@@ -29,19 +29,9 @@ angular.module('jkuri.gallery', [])
         '<div id="restaurant-pictures-gallery" class="carousel slide">'+
             '<div class="carousel-inner">'+
                 '<div ng-repeat="i in images | chunk:3">' +
-                    '<div class="col-xs-4 nopadding-side">'+
+                    '<div class="col-xs-4 nopadding-side">' +
                         '<a class="thumbnail">' +
                             '<img ng-src="{{i.thumb}}" class="thumb" />' +
-                        '</a>' +
-                    '</div>' +
-                    '<div class="col-xs-4 nopadding-side">' +
-                        '<a class="thumbnail">' +
-                            '<img ng-src="{{getGallerySource(1, $index)}}" class="thumb" />' +
-                        '</a>' +
-                    '</div>' +
-                    '<div class="col-xs-4 nopadding-side">' +
-                        '<a class="thumbnail">' +
-                            '<img ng-src="{{getGallerySource(2, $index)}}" class="thumb" />' +
                         '</a>' +
                     '</div>' +
                 '</div>' + //end repeat
