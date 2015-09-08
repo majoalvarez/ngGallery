@@ -28,23 +28,11 @@ angular.module('jkuri.gallery', [])
 	'<div class="{{ baseClass }}">' +
         '<div id="restaurant-pictures-gallery" class="carousel slide">'+
             '<div class="carousel-inner">'+
-                '<div ng-repeat="i in images | chunk:3">' +
-                    '<div class="col-xs-4 nopadding-side">' +
-                        '<a class="thumbnail">' +
-                            '<img ng-src="{{i.thumb}}" class="thumb" />' +
-                        '</a>' +
-                    '</div>' +
-                '</div>' + //end repeat
-            '</div>' + //end carousel inner
-            '<div class="col-xs-12">' +
-                '<a ng-non-bindable class="left carousel-control pointer" data-target="#restaurant-pictures-gallery" data-slide="prev">' +
-                    '<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>' +
-                '</a>' +
-                '<a ng-non-bindable class="right carousel-control pointer" data-target="#restaurant-pictures-gallery" data-slide="next">' +
-                    '<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>' +
-                '</a>' +
+                '<div ng-repeat="i in images">' +
+                    '<img ng-src="{{ i.thumb }}" class="{{ thumbClass }}" ng-click="openGallery($index)" alt="Image {{ $index + 1 }}" />'+
+                '</div>' +
             '</div>' +
-        '</div>' + //end carousel slide
+        '</div>' +
     '</div>' +
 	'<div class="ng-overlay" ng-show="opened">' +
 	'</div>' +
@@ -113,7 +101,7 @@ angular.module('jkuri.gallery', [])
 			};
 
             var getGallerySource = function(index, parent) {
-                return scope.images[ (parseInt(index) + 3 * parent) % scope.images.length ].img;
+                return scope.images[ (parseInt(index) + 3 * parent) % scope.images.length ];
             };
 
 			var showImage = function (i) {
