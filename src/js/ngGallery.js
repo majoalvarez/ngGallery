@@ -31,7 +31,7 @@ angular.module('jkuri.gallery', [])
                 '<div ng-repeat="i in images | chunk:3">' +
                     '<div class="col-xs-4 nopadding-side">'+
                         '<a class="thumbnail">' +
-                            '<img ng-src="{{getGallerySource(0, $index)}}" class="thumb" />' +
+                            '<img ng-src="i.thumb" class="thumb" />' +
                         '</a>' +
                     '</div>' +
                     '<div class="col-xs-4 nopadding-side">' +
@@ -123,7 +123,7 @@ angular.module('jkuri.gallery', [])
 			};
 
             var getGallerySource = function(index, parent) {
-                return scope.images[ (parseInt(index) + 3 * parent) % scope.images.length ].thumb;
+                return scope.images[ (parseInt(index) + 3 * parent) % scope.images.length ].img;
             };
 
 			var showImage = function (i) {
